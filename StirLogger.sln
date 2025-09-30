@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StirLogger", "StirLogger\StirLogger.csproj", "{76B7A87D-7BAE-4A66-AE0C-96F5D7E1A90A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76B7A87D-7BAE-4A66-AE0C-96F5D7E1A90A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B7A87D-7BAE-4A66-AE0C-96F5D7E1A90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B7A87D-7BAE-4A66-AE0C-96F5D7E1A90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B7A87D-7BAE-4A66-AE0C-96F5D7E1A90A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
