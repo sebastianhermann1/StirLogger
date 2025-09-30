@@ -1,4 +1,4 @@
-﻿using StirLogger.ConfigReader;
+﻿using StirLogger.RawDataStructureReader;
 
 namespace StirLogger;
 

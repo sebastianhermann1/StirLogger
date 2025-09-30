@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace StirLogger.ConfigReader;
+namespace StirLogger.RawDataStructureReader;
 
 /// <summary>
 /// Liest die Header-Beschreibung aus einer Datei und erzeugt eine HeaderStruct-Instanz.

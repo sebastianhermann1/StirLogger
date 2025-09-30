@@ -1,5 +1,6 @@
-﻿using StirLogger.ConfigReader.Models;
-namespace StirLogger.ConfigReader;
+﻿using StirLogger.RawDataStructureReader.Models;
+
+namespace StirLogger.RawDataStructureReader;
 
 /// <summary>
 /// Enthält Informationen zu einem Header-Feld (Typ, Offset usw.).

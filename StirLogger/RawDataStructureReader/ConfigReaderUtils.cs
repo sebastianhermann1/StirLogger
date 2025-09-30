@@ -1,7 +1,7 @@
 ﻿using System;
-using StirLogger.ConfigReader.Models;
+using StirLogger.RawDataStructureReader.Models;
 
-namespace StirLogger.ConfigReader;
+namespace StirLogger.RawDataStructureReader;
 
 public class ConfigReaderUtils
 {

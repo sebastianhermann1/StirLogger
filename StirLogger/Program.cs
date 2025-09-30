@@ -3,7 +3,9 @@ using System.Collections.Concurrent;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using StirLogger.ConfigReader;
+
+using StirLogger.PlcInterface;
+using StirLogger.RawDataStructureReader;
 
 
 namespace StirLogger;
@@ -19,11 +21,11 @@ class Program
                 "datastructure"));
 
         BlockingCollection<LogEntry> logs = new BlockingCollection<LogEntry>();
-        Server server = new Server(logs, rawDataStructure);
+        LogServer logServer = new LogServer(logs, rawDataStructure);
         SQLiteParser parser = new SQLiteParser(logs);
 
         // Start tasks
-        server.Start();
+        logServer.Start();
         parser.Start();
 
         while (true)
@@ -39,7 +41,7 @@ class Program
         
         void Cleanup()
         {
-        server.Stop();
+        logServer.Stop();
         parser.Stop();
         Thread.Sleep(2000);
         }

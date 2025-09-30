@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using StirLogger.ConfigReader;
+using StirLogger.RawDataStructureReader;
 
-namespace StirLogger;
+namespace StirLogger.PlcInterface;
 
 public struct ValueStruct
 {   

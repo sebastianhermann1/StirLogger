@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace StirLogger.ConfigReader;
+namespace StirLogger.RawDataStructureReader;
 
 /// <summary>
 /// Repräsentiert die Struktur der Metadaten als Dictionary.
