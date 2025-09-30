@@ -43,7 +43,6 @@ class Program
         {
         logServer.Stop();
         parser.Stop();
-        Thread.Sleep(2000);
         }
     }
 }
