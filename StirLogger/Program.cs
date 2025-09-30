@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.IO;
+using System.Runtime.CompilerServices;
+using System.Threading;
 using StirLogger.ConfigReader;
 
 
@@ -8,24 +10,22 @@ namespace StirLogger;
 
 class Program
 {
-    static void Main(string[] args)
+    static int Main(string[] args)
     {
-        DataStructureReader reader = new DataStructureReader(
+        RawDataStructure rawDataStructure = DataStructureReader.Read(
             Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 "StirLogger",
                 "datastructure"));
-        
-        RawDataStructure rawDataStructure;
-        
-        BlockingCollection<LogEntry> logs = new BlockingCollection<LogEntry>();
-        SQLiteParser parser = new SQLiteParser(logs);
-        Server.Server server = new Server.Server(logs);
 
-        // start tasks
-        server.start();
-        parser.start();
-        
+        BlockingCollection<LogEntry> logs = new BlockingCollection<LogEntry>();
+        Server server = new Server(logs, rawDataStructure);
+        SQLiteParser parser = new SQLiteParser(logs);
+
+        // Start tasks
+        server.Start();
+        parser.Start();
+
         while (true)
         {
             Console.WriteLine("Type 'exit' to quit the application.");
@@ -33,13 +33,15 @@ class Program
             if (input == null || input.Equals("exit", StringComparison.OrdinalIgnoreCase))
             {
                 Cleanup();
-                break;
+                return 0;
             }
         }
-    }
-    
-    static void Cleanup()
-    {
         
+        void Cleanup()
+        {
+        server.Stop();
+        parser.Stop();
+        Thread.Sleep(2000);
+        }
     }
 }

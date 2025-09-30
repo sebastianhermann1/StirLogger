@@ -14,7 +14,11 @@ public class SQLiteParser
     }
     
     
-    public void start()
+    public void Start()
+    {
+        
+    }
+    public void Stop()
     {
         
     }
